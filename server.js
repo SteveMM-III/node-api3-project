@@ -1,4 +1,7 @@
-const express = require('express');
+const express = require( 'express' );
+
+const userRouter = require( './users/userRouter' );
+const postsRouter = require( './posts/postRouter' ); 
 
 const server = express();
 
@@ -8,6 +11,8 @@ server.get('/', (req, res) => {
 
 //custom middleware
 
-function logger(req, res, next) {}
+server.use( '/users', userRouter );
+server.use( '/posts', postsRouter );
+
 
 module.exports = server;
