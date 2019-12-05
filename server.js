@@ -1,6 +1,6 @@
 const express = require( 'express' );
 
-const userRouter = require( './users/userRouter' );
+const userRouter  = require( './users/userRouter' );
 const postsRouter = require( './posts/postRouter' ); 
 
 const server = express();
@@ -16,9 +16,9 @@ server.get('/', (req, res) => {
 
 //custom middleware
 
-server.use( '/users', userRouter );
+server.use( '/users', userRouter  );
 server.use( '/posts', postsRouter );
-server.use( logger );
-server.use( express.json() );
+server.use( logger                );
+server.use( express.json()        );
 
 module.exports = server;
